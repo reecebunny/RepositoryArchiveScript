@@ -62,6 +62,10 @@ By using this software, you acknowledge that it may not work as intended or may 
 
 If you encounter any issues or bugs, please feel free to report them, but understand that I may not be able to address them.
 
+### Terms of Service
+
+When using this software, you are required to adhere to GitHub's Terms of Service and Terms of Use. Ensure that your use of this script complies with these terms.
+
 For more details on the GNU GPL v3.0, please refer to the LICENSE file.
 
 ## Contact
