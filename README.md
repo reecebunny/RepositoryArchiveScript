@@ -5,7 +5,7 @@ A Python script designed to easily download the source code and latest release o
 ## Usage
 
 1. **Download the script:**
-   Download `ras.py` and save it to your desired location.
+   Download `ras.py` ~~_(sounds like raspi, funny!!)_~~ and save it to your desired location.
 
 2. **Run the script:**
    Open a command line interface and navigate to the directory where `ras.py` is saved. Run the script using Python:
