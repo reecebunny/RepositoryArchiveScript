@@ -54,9 +54,15 @@ Example prompt and input:
 
     Enter the GitHub repository URL: https://github.com/user/repo
 
-## License
+## License & disclaimer
 
-This project is licensed under the Gnu GPL 3.0 License. See the LICENSE file for details.
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0). This software is provided "as is," without any express or implied warranties. We make no guarantees regarding the functionality, reliability, or suitability of this software for any particular purpose.
+
+By using this software, you acknowledge that it may not work as intended or may have defects or issues. The authors are not liable for any damages or problems that arise from the use of this software.
+
+If you encounter any issues or bugs, please feel free to report them, but understand that we may not be able to address them.
+
+For more details on the GNU GPL v3.0, please refer to the LICENSE file.
 
 ## Contact
 
