@@ -43,7 +43,7 @@ def prompt_user_confirmation(config_path='config.json'):
                 print_colored("\nYou must agree to the terms to use this script.\n", "31")  # 31 is the color code for red
                 sys.exit(1)
             else:
-                print_colored('\nInvalid input, you must say "yes" or "no" to agree/disagree to the terms.\n', "31")  # 31 is the color code for red
+                print_colored('\nInvalid input, you must say "yes" or "no" to agree/disagree to the terms.\n\n', "31")  # 31 is the color code for red
 
 def print_progress_bar(downloaded, total):
     bar_length = 60  # Length of the progress bar
