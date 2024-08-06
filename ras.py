@@ -195,7 +195,7 @@ if __name__ == "__main__":
         f.write(f"Latest Release Date: {datetime.strptime(release_date, '%Y-%m-%dT%H:%M:%SZ').strftime('%Y-%m-%d %H:%M:%S') if release_date != 'N/A' else 'N/A'}\n")
         f.write(f"License: {license_info}\n")
         f.write("\nThis archive was generated using RAS\n")
-        f.write("https://github.com/reecebunny/RepositoryArchiveScript\n")
+        f.write("https://github.com/reecebunny/RepositoryArchiverScript\n")
 
     print_colored(f"\nCreated archive information file at {archive_info_path}\n\n", "blue")
 
