@@ -20,8 +20,10 @@ pip install requests
 ```
 python ras.py
 ```
+5. **Accept the terms:**
+   Type 'yes' or 'no' to accept/deny the terms ***(you will only have to do this once)***
 
-5. **Provide the GitHub repository URL:**
+6. **Provide the GitHub repository URL:**
    When prompted, enter the GitHub repository URL you wish to download.
 
 The script will create a separate folder for each repository in the directory where the script is located. The folder name will include the repository name and the current date.
