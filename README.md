@@ -3,6 +3,7 @@
 A Python script designed to easily download the source code and latest release of a GitHub repository for archival purposes.
 
 I made this script for my personal use but decided to upload it here as it may also be useful to others who have similar needs.
+I had fun making the repo look all official :P
 
 ## Usage
 1. **[Download and install Python](https://wiki.python.org/moin/BeginnersGuide/Download)** 
