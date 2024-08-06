@@ -10,9 +10,9 @@ Compatibility tested on both linux and windows.
 ## Usage
 1. **[Download and install Python](https://wiki.python.org/moin/BeginnersGuide/Download)** 
 
-2. **Install requirements:** Open a command line interface and install the `requests` package using pip:
+2. **Install requirements:** Open a command line interface and install the `requests` and `colorama` packages using pip:
 ```
-pip install requests
+pip install requests colorama
 ```
 3. **Download the script:**
    Download `ras.py` ~~_(sounds like raspi, funny!!)_~~ and save it to your desired location.
@@ -43,10 +43,11 @@ The script will create a separate folder for each repository in the directory wh
 
 - Python 3.x
 - `requests` library
+- `colorama` library
 
 You can install the required libraries using:
 
-    pip install requests
+    pip install requests colorama
 
 ## Configuration
 
