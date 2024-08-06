@@ -39,8 +39,6 @@ The script will create a separate folder for each repository in the directory wh
 
 - Python 3.x
 - `requests` library
-- `json` library
-- `zipfile` library
 
 You can install the required libraries using:
 
