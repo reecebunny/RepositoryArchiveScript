@@ -25,6 +25,10 @@ def save_config(config, config_path='config.json'):
     with open(config_path, 'w') as f:
         json.dump(config, f, indent=4)
 
+def print_colored(text, color_code):
+    sys.stdout.write(f'\033[{color_code}m{text}\033[0m')
+    sys.stdout.flush()
+
 def prompt_user_confirmation(config_path='config.json'):
     config = load_config(config_path)
     
@@ -36,10 +40,10 @@ def prompt_user_confirmation(config_path='config.json'):
                 save_config(config, config_path)
                 break
             elif confirmation == 'no':
-                print("\nYou must agree to the terms to use this script.")
+                print_colored("\nYou must agree to the terms to use this script.\n", "31")  # 31 is the color code for red
                 sys.exit(1)
             else:
-                print('\nInvalid input, you must say "yes" or "no" to agree/disagree to the terms.\n')
+                print_colored('\nInvalid input, you must say "yes" or "no" to agree/disagree to the terms.\n', "31")  # 31 is the color code for red
 
 def print_progress_bar(downloaded, total):
     bar_length = 60  # Length of the progress bar
@@ -93,7 +97,7 @@ def check_repo_url_valid(repo_url):
 
 def download_github_repo(repo_url):
     if not check_repo_url_valid(repo_url):
-        print("The provided repository URL is invalid or does not exist.")
+        print_colored("The provided repository URL is invalid or does not exist.\n", "31")  # 31 is the color code for red
         return False
     else:
         return True
@@ -104,10 +108,6 @@ def apply_rate_limit(session):
         session.headers.update({'X-RateLimit-Limit': '5000'})
         session.headers.update({'X-RateLimit-Remaining': '5000'})
         session.headers.update({'X-RateLimit-Reset': str(int(time.time()) + 3600)})
-
-def print_colored(text, color_code):
-    sys.stdout.write(f'\033[{color_code}m{text}\033[0m')
-    sys.stdout.flush()
 
 if __name__ == "__main__":
     prompt_user_confirmation()
