@@ -14,7 +14,7 @@ python ras.py
 ```
 
 4. **Provide the GitHub repository URL:**
-   When prompted, enter the GitHub repository URL you wish to archive.
+   When prompted, enter the GitHub repository URL you wish to download.
 
 The script will create a separate folder for each repository in the directory where the script is located. The folder name will include the repository name and the current date.
 
