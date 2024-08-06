@@ -7,16 +7,21 @@ I had fun making the repo look all official :P
 
 ## Usage
 1. **[Download and install Python](https://wiki.python.org/moin/BeginnersGuide/Download)** 
-2. **Download the script:**
+
+2. **Install requirements:** Open a command line interface and install the `requests` package using pip:
+```
+pip install requests
+```
+3. **Download the script:**
    Download `ras.py` ~~_(sounds like raspi, funny!!)_~~ and save it to your desired location.
 
-3. **Run the script:**
+4. **Run the script:**
    Open a command line interface and navigate to the directory where `ras.py` is saved. Run the script using Python, ex:
 ```
 python ras.py
 ```
 
-4. **Provide the GitHub repository URL:**
+5. **Provide the GitHub repository URL:**
    When prompted, enter the GitHub repository URL you wish to download.
 
 The script will create a separate folder for each repository in the directory where the script is located. The folder name will include the repository name and the current date.
