@@ -6,6 +6,10 @@ import time
 import sys
 import re
 import json
+from colorama import init, Fore, Style
+
+# Initialize colorama
+init()
 
 # Define the default config
 DEFAULT_CONFIG = {
@@ -25,8 +29,17 @@ def save_config(config, config_path='config.json'):
     with open(config_path, 'w') as f:
         json.dump(config, f, indent=4)
 
-def print_colored(text, color_code):
-    sys.stdout.write(f'\033[{color_code}m{text}\033[0m')
+def print_colored(text, color):
+    color_map = {
+        'red': Fore.RED,
+        'green': Fore.GREEN,
+        'grey': Fore.LIGHTBLACK_EX,
+        'blue': Fore.BLUE,
+        'yellow': Fore.YELLOW,
+        'white': Fore.WHITE
+    }
+    end_style = Style.RESET_ALL
+    sys.stdout.write(f'{color_map.get(color, Fore.WHITE)}{text}{end_style}')
     sys.stdout.flush()
 
 def prompt_user_confirmation(config_path='config.json'):
@@ -40,19 +53,20 @@ def prompt_user_confirmation(config_path='config.json'):
                 save_config(config, config_path)
                 break
             elif confirmation == 'no':
-                print_colored("\nYou must agree to the terms to use this script.\n", "31")  # 31 is the color code for red
+                print_colored("\nYou must agree to the terms to use this script.\n", "red")
                 sys.exit(1)
             else:
-                print_colored('\nInvalid input, you must say "yes" or "no" to agree/disagree to the terms.\n\n', "31")  # 31 is the color code for red
+                print_colored('\nInvalid input, you must say "yes" or "no" to agree/disagree to the terms.\n\n', "red")
 
-def print_progress_bar(downloaded, total):
+def print_progress_bar(downloaded, total, is_complete=False):
     bar_length = 60  # Length of the progress bar
     progress = (downloaded / total) if total else 0  # Progress as a fraction
     filled_length = int(round(bar_length * progress))
     percent = round(100.0 * progress, 1)
     
+    color = Fore.WHITE if not is_complete else Fore.GREEN  # White or Green
     bar = '#' * filled_length + '-' * (bar_length - filled_length)
-    sys.stdout.write(f'\r[{bar}] {percent}% {downloaded / (1024 * 1024):.2f} MiB')
+    sys.stdout.write(f'\r{color}[{bar}] {percent}% {downloaded / (1024 * 1024):.2f} MiB{Style.RESET_ALL}')
     sys.stdout.flush()
 
 def download_with_progress(url, path):
@@ -80,8 +94,9 @@ def download_with_progress(url, path):
                 print_progress_bar(downloaded, total_size)
                 start_time = current_time  # Reset start time for the next update
 
-    # Finish progress bar
-    sys.stdout.write('\r[' + '#' * 60 + '] 100% {0:.2f} MiB\n'.format(downloaded / (1024 * 1024)))
+    # Finish progress bar with green color
+    print_progress_bar(downloaded, total_size, is_complete=True)
+    sys.stdout.write('\n')
     sys.stdout.flush()
 
 def check_repo_url_valid(repo_url):
@@ -97,7 +112,7 @@ def check_repo_url_valid(repo_url):
 
 def download_github_repo(repo_url):
     if not check_repo_url_valid(repo_url):
-        print_colored("The provided repository URL is invalid or does not exist.\n", "31")  # 31 is the color code for red
+        print_colored("The provided repository URL is invalid or does not exist.\n", "red")
         return False
     else:
         return True
@@ -182,7 +197,7 @@ if __name__ == "__main__":
         f.write("\nThis archive was generated using RAS\n")
         f.write("https://github.com/reecebunny/RepositoryArchiveScript\n")
 
-    print(f"\nCreated archive information file at {archive_info_path}")
+    print_colored(f"\nCreated archive information file at {archive_info_path}\n\n", "blue")
 
     # Define the path for the source code zip file
     source_zip_path = os.path.join(repo_folder, f"{repo_name}-source.zip")
@@ -202,7 +217,7 @@ if __name__ == "__main__":
         with zipfile.ZipFile(source_zip_path, 'r') as zip_ref:
             zip_file_valid = True
     except zipfile.BadZipFile:
-        print(f"\nThe downloaded zip file is not valid. Trying alternative download URL.")
+        print_colored(f"\nThe downloaded zip file is not valid. Trying alternative download URL.\n", "yellow")
         zip_file_valid = False
 
     # Attempt to download from the alternative URL if the zip file is invalid
@@ -224,9 +239,9 @@ if __name__ == "__main__":
         try:
             with zipfile.ZipFile(source_zip_path, 'r') as zip_ref:
                 zip_ref.extractall(repo_folder)
-            print(f"\nExtracted source code to {repo_folder}")
+            print_colored(f"Extracted source code to {repo_folder}\n", "green")
         except Exception as e:
-            print(f"Failed to extract zip file: {e}")
+            print_colored(f"Failed to extract zip file: {e}", "red")
     else:
         # Remove the invalid zip file if it's not valid
         if os.path.exists(source_zip_path):
@@ -234,11 +249,14 @@ if __name__ == "__main__":
 
     # Download latest release assets if there are any
     if release_date != "N/A":
+        total_assets = len(latest_release['assets'])
+        downloaded_assets = 0
         for asset in latest_release['assets']:
             asset_url = asset['browser_download_url']
             asset_name = asset['name']
             asset_path = os.path.join(releases_folder, asset_name)
-            print(f"\nDownloading latest release asset {asset_name} to {asset_path}...")
+            print(f"\n({downloaded_assets + 1}/{total_assets}) Downloading latest release asset {asset_name}...")
             download_with_progress(asset_url, asset_path)
+            downloaded_assets += 1
 
-    print_colored("\nScript execution completed.\n", "32")
+    print_colored("\nScript execution completed.\n", "green")
