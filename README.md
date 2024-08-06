@@ -30,7 +30,21 @@ python ras.py
 6. **Provide the GitHub repository URL:**
    When prompted, enter the GitHub repository URL you wish to download.
 
-The script will create a separate folder for each repository in the directory where the script is located. The folder name will include the repository name and the current date.
+The script will create a separate folder for each repository you download in the directory where the script is located. The folder name will include the repository name and the current date.
+
+Example:
+```
+Documents/  # The folder where the ras.py script is located, can be anywhere
+> ras.py                        # This is the python script
+> ExampleRepo_2024-08-06/       # Example of a downloaded repository
+  > Releases/                  # Folder for latest release assets
+    > asset1.zip
+    > asset2.tar.gz
+    > asset3.bin
+  > ExampleRepo-source.zip     # Source code zip file
+  > archive-information.txt   # Archive information file
+  > ExampleRepo-main/         # Extracted repository contents
+```
 
 ## Features
 
