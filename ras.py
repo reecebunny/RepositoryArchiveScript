@@ -156,6 +156,8 @@ if __name__ == "__main__":
         f.write(f"Archive Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
         f.write(f"Latest Release Date: {datetime.strptime(release_date, '%Y-%m-%dT%H:%M:%SZ').strftime('%Y-%m-%d %H:%M:%S') if release_date != 'N/A' else 'N/A'}\n")
         f.write(f"License: {license_info}\n")
+        f.write("\nThis archive was downloaded using RAS\n")
+        f.write("https://github.com/reecebunny/RepositoryArchiveScript\n")
 
     print(f"\nCreated archive information file at {archive_info_path}")
 
@@ -217,4 +219,3 @@ if __name__ == "__main__":
             download_with_progress(asset_url, asset_path)
 
     print("\nScript execution completed.")
-
