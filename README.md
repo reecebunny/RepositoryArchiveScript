@@ -5,6 +5,8 @@ A Python script designed to easily allow you to download the source code and lat
 I made this script for my personal use but decided to upload it here as it may also be useful to others who have similar needs.
 I had fun making the repo look all official :P
 
+Compatibility tested on both linux and windows.
+
 ## Usage
 1. **[Download and install Python](https://wiki.python.org/moin/BeginnersGuide/Download)** 
 
