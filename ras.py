@@ -88,6 +88,10 @@ def apply_rate_limit(session):
         session.headers.update({'X-RateLimit-Remaining': '5000'})
         session.headers.update({'X-RateLimit-Reset': str(int(time.time()) + 3600)})
 
+def print_colored(text, color_code):
+    sys.stdout.write(f'\033[{color_code}m{text}\033[0m')
+    sys.stdout.flush()
+
 if __name__ == "__main__":
     config = load_config()
 
@@ -218,4 +222,4 @@ if __name__ == "__main__":
             print(f"\nDownloading latest release asset {asset_name} to {asset_path}...")
             download_with_progress(asset_url, asset_path)
 
-    print("\nScript execution completed.")
+    print_colored("\nScript execution completed.\n", "32")
