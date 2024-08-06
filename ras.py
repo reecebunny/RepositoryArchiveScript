@@ -10,7 +10,7 @@ import json
 # Define the default config
 DEFAULT_CONFIG = {
     "rate_limiting": True,
-    "terms_confirmed": False
+    "terms_accepted": False
 }
 
 def load_config(config_path='config.json'):
@@ -32,11 +32,11 @@ def print_colored(text, color_code):
 def prompt_user_confirmation(config_path='config.json'):
     config = load_config(config_path)
     
-    if not config.get("terms_confirmed", False):
+    if not config.get("terms_accepted", False):
         while True:
             confirmation = input("By using this script, you confirm you have read the README in its entirety and agree to all licenses and disclaimers (yes/no): ").strip().lower()
             if confirmation == 'yes':
-                config["terms_confirmed"] = True
+                config["terms_accepted"] = True
                 save_config(config, config_path)
                 break
             elif confirmation == 'no':
@@ -179,7 +179,7 @@ if __name__ == "__main__":
         f.write(f"Archive Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
         f.write(f"Latest Release Date: {datetime.strptime(release_date, '%Y-%m-%dT%H:%M:%SZ').strftime('%Y-%m-%d %H:%M:%S') if release_date != 'N/A' else 'N/A'}\n")
         f.write(f"License: {license_info}\n")
-        f.write("\nThis archive was downloaded using RAS\n")
+        f.write("\nThis archive was generated using RAS\n")
         f.write("https://github.com/reecebunny/RepositoryArchiveScript\n")
 
     print(f"\nCreated archive information file at {archive_info_path}")
