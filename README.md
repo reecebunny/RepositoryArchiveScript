@@ -64,7 +64,7 @@ If you encounter any issues or bugs, please feel free to report them, but unders
 
 ### Terms of Service
 
-When using this software, you are required to adhere to GitHub's Terms of Service and Terms of Use. Ensure that your use of this script complies with these terms.
+When using this software, you are required to adhere to GitHub's Terms of Service, Terms of Use, And other policies. Ensure that your use of this script complies with these terms.
 
 For more details on the GNU GPL v3.0, please refer to the LICENSE file.
 
