@@ -25,7 +25,7 @@ python ras.py
 *(you can also just right click inside the folder where the script is located and select "Open command line here")*
 
 5. **Accept the terms:**
-   Type 'yes' or 'no' to accept/deny the terms ***(you will only have to do this once)***
+   When prompted, Type yes or no to accept/deny the terms ***(you will only have to do this once)***
 
 6. **Provide the GitHub repository URL:**
    When prompted, enter the GitHub repository URL you wish to download.
