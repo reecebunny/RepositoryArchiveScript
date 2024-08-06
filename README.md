@@ -50,17 +50,12 @@ The script automatically generates a `config.json` file if it does not exist. Th
 
     {
         "rate_limiting": true
+        "terms_confirmed": false
     }
 
 You can enable or disable rate limiting by setting the `rate_limiting` value to `true` or `false`.
 
-## Example
-
-     python ras.py
-
-Example prompt and input:
-
-    Enter the GitHub repository URL: https://github.com/user/repo
+`terms_confirmed` is set to true when the user accepts the terms.
 
 ## License & disclaimer
 This project is licensed under the GNU General Public License v3.0 (GPL-3.0). This software is provided "as is," without any express or implied warranties. I make no guarantees regarding the functionality, reliability, or suitability of this software for any particular purpose.
