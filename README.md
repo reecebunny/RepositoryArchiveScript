@@ -71,7 +71,7 @@ When using this software, you are required to adhere to GitHub's Terms of Servic
 
 This script automatically downloads a GitHub repository, but it is your responsibility to verify the safety of any content downloaded using this script. Ensure that the repositories or files you are downloading and the URLs you input are from trusted sources. I am not responsible for the content of any files downloaded through this script or for any damages or issues that may arise from their use.
 
-For more details on the GNU GPL v3.0, please refer to the official license.
+For more details on the GNU GPL v3.0, please refer to LICENSE file.
 
 ## Contact
 
