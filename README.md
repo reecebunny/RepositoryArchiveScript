@@ -16,7 +16,7 @@ pip install requests
    Download `ras.py` ~~_(sounds like raspi, funny!!)_~~ and save it to your desired location.
 
 4. **Run the script:**
-   Open a command line interface and navigate to the directory where `ras.py` is saved. Run the script using Python, ex:
+   Open a command line interface and navigate to the directory where `ras.py` is located. Run the script using Python, ex:
 ```
 python ras.py
 ```
