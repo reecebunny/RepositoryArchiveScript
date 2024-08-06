@@ -14,6 +14,8 @@ Compatibility tested on both linux and windows.
 ```
 pip install requests
 ```
+*(you can also just right click inside the folder where the script is located and select "Open command line here")*
+
 3. **Download the script:**
    Download `ras.py` ~~_(sounds like raspi, funny!!)_~~ and save it to your desired location.
 
