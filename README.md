@@ -55,7 +55,6 @@ Example prompt and input:
     Enter the GitHub repository URL: https://github.com/user/repo
 
 ## License & disclaimer
-
 This project is licensed under the GNU General Public License v3.0 (GPL-3.0). This software is provided "as is," without any express or implied warranties. I make no guarantees regarding the functionality, reliability, or suitability of this software for any particular purpose.
 
 By using this software, you acknowledge that it may not work as intended or may have defects or issues. I am not liable for any damages or problems that arise from the use of this software.
@@ -64,9 +63,13 @@ If you encounter any issues or bugs, please feel free to report them, but unders
 
 ### Terms of Service
 
-When using this software, you are required to adhere to GitHub's Terms of Service, Terms of Use, And other policies. Ensure that your use of this script complies with these terms.
+When using this software, you are required to adhere to GitHub's Terms of Service and Terms of Use. Ensure that your use of this script complies with these terms.
 
-For more details on the GNU GPL v3.0, please refer to the LICENSE file.
+### Download and Use at Your Own Risk
+
+This script automatically archives a GitHub repository, but it is your responsibility to verify the safety of any content downloaded using this script. Ensure that the repositories or files you are downloading are from trusted sources. I am not responsible for the content of any files downloaded through this script or for any damages or issues that may arise from their use.
+
+For more details on the GNU GPL v3.0, please refer to the official license.
 
 ## Contact
 
